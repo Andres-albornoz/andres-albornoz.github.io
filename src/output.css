@@ -36,12 +36,20 @@
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
   }
-  h1, h2, h3, h4, h5, h6 {
-    font-size: inherit;
+  h1 {
+    color:rgb(222, 239, 255);
+    background-color:black;
+    font-size: 1.8rem;
+    font-weight: inherit;
+  }
+  h2, h3, h4, h5, h6 {
+    color:rgb(222, 239, 255);
+    background-color:black;
+    font-size: 1.5rem;
     font-weight: inherit;
   }
   a {
-    color: inherit;
+    color: rgb(181, 204, 224);
     -webkit-text-decoration: inherit;
     text-decoration: inherit;
   }
@@ -71,8 +79,13 @@
   }
   table {
     text-indent: 0;
-    border-color: inherit;
+    border-width: 2px;
+    border-color: black;
     border-collapse: collapse;
+  }
+  tr, td {
+    border-color: inherit;
+    border-width: 1px;
   }
   :-moz-focusring:where(:not(iframe)) {
     outline: auto;
@@ -91,6 +104,7 @@
     vertical-align: middle;
   }
   img, video {
+    margin: 1px auto;
     max-width: 100%;
     height: auto;
   }
