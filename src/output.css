@@ -105,7 +105,7 @@
   }
   img, video {
     margin: 1px auto;
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
   }
   button, input, select, optgroup, textarea, ::file-selector-button {
