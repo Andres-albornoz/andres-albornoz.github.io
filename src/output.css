@@ -39,7 +39,14 @@
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2{
+    font-size: inherit;
+    font-weight: inherit;
+    background-color: rgb(23, 27, 44);
+    color :aliceblue;
+  }
+  
+  h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;
   }
@@ -89,12 +96,12 @@
   ol, ul, menu {
     list-style: none;
   }
-  img, svg, video, canvas, audio, iframe, embed, object {
+  svg, video, canvas, audio, iframe, embed, object {
     display: block;
     vertical-align: middle;
   }
   img, video {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
   }
   button, input, select, optgroup, textarea, ::file-selector-button {
