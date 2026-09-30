@@ -1,22 +1,22 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import layout from './core/layout.jsx';
-import Index from './pages/Index.jsx';
-//import { contacto } from './pages/conmacto.jsx';
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-//import './index.css'
-import App from './App.jsx'
+import { createRoot } from 'react-dom/client';
+import Layout from './core/Layout.jsx';
+import Contacto from './pages/contacto.jsx';
+import App from './App.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <layout/>,
+    element: <Layout />,
     children: [
-      { index: true, element: <App /> }
+      { index: true, element: <App /> },
+      { path: 'contacto', element: <Contacto /> },
     ],
   },
 ]);
- 
-createRoot(document.getElementById('layout')).render(
+
+createRoot(document.getElementById('Layout')).render(
   <RouterProvider router={router} />
 );

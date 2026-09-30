@@ -6,3 +6,5 @@ function contacto() {
         </div>
     )
 }
+
+export default contacto;
