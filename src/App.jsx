@@ -3,7 +3,7 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
-import Layout from './core/Layout.jsx';
+import Layout from './core/layout.jsx';
 import Contacto from './pages/contacto.jsx';
 import Index from './pages/Index.jsx';
 
@@ -125,8 +125,8 @@ function App() {
 export default App
 
 /*/
-import { Route, Routes } from 'react-router'
-import Layout from './core/Layout.jsx';
+import { Route, Routes } from 'react-router-dom'
+import Layout from './core/layout.jsx';
 import Contacto from './pages/contacto.jsx';
 import Index from './pages/Index.jsx';
 
