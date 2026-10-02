@@ -1,8 +1,11 @@
-import { useState } from 'react'
+/*import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import Layout from './core/Layout.jsx';
+import Contacto from './pages/contacto.jsx';
+import Index from './pages/Index.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -120,3 +123,21 @@ function App() {
 }
 
 export default App
+
+/*/
+import { Route, Routes } from 'react-router'
+import Layout from './core/Layout.jsx';
+import Contacto from './pages/contacto.jsx';
+import Index from './pages/Index.jsx';
+
+export default function App() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Index />} />
+        <Route path="contacto" element={<Contacto />} />
+      </Route>
+    </Routes>
+  )
+}
+/**/
