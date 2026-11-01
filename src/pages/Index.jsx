@@ -1,119 +1,133 @@
-import { useState } from 'react'
-import heroImg from '../assets/hero.png'
-import reactLogo from '../assets/react.svg'
-import viteLogo from '../assets/vite.svg'
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import Certificado from '../core/Certificado.jsx'
+
+const skills = [
+  'Python',
+  'Unity',
+  'React',
+  'JavaScript',
+  'HTML',
+  'CSS',
+  'Git',
+  'GitHub',
+  'c#',
+]
 
 function Index() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    document.title = 'Andrés Albornoz | CV personal'
+  }, [])
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <p className="eyebrow">Hola, soy</p>
+          <h1 id="hero-title">Andrés Albornoz</h1>
+          <p className="hero-role">
+            Estudiante de Informática · Duoc UC San Joaquín
+          </p>
+          <p className="hero-text">
+            Me interesa el desarrollo de software y los videojuegos. Estoy dando
+            mis primeros pasos con Python y Unity, y este sitio reúne lo que he
+            aprendido hasta ahora.
+          </p>
+          <div className="hero-actions">
+            <a className="btn btn-primary" href="#certificados">
+              Ver certificados
+            </a>
+            <Link className="btn btn-ghost" to="/contacto">
+              Contacto
+            </Link>
+            <a
+              className="btn btn-ghost"
+              href="https://github.com/Andres-albornoz?tab=repositories"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+              <span className="btn-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </a>
+          </div>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/index.jsx</code> and save to test <code>HMR</code>
+      </section>
+
+      <section className="section" id="sobre-mi" aria-labelledby="about-title">
+        <div className="section-head">
+          <p className="eyebrow">Sobre mí</p>
+          <h2 id="about-title">Aprendiendo y construyendo</h2>
+        </div>
+        <div className="about-grid">
+          <div className="card about-card">
+            <p>
+              Soy estudiante de informática en Duoc UC San Joaquín. Estoy
+              interesado en el desarrollo de software y videojuegos.
+            </p>
+
+            <p>
+              He certificado mis primeros pasos en <strong>Python</strong> y{' '}
+              <strong>Unity Essentials</strong>, y sigo practicando con
+              tecnologías web como React y el desarrollo de videojuegos como
+              programador júnior en Unity Learn.
+            </p>
+            <div className="about-links">
+              <a
+                href="https://github.com/Andres-albornoz?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver mi GitHub <span aria-hidden="true">↗</span>
+              </a>
+              <Link to="/contacto">
+                Hablemos <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="card skills-card">
+            <h3>Tecnologías que estoy aprendiendo</h3>
+            <ul className="skills" aria-label="Tecnologías">
+              {skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+            <p className="skills-note">
+              Siempre con ganas de sumar una herramienta nueva.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="section"
+        id="certificados"
+        aria-labelledby="certificados-title"
+      >
+        <div className="section-head">
+          <p className="eyebrow">Logros</p>
+          <h2 id="certificados-title">Certificados</h2>
+          <p className="section-subtitle">
+            Certificaciones que respaldan mis primeros pasos en programación y
+            desarrollo de videojuegos.
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+        <Certificado />
       </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+      <section className="cta" aria-label="Enlaces de contacto">
+        <p className="eyebrow">¿Trabajamos juntos?</p>
+        <div className="cta-actions">
+          <a className="btn btn-primary" href="mailto:AN.ALBORNOZC@duocuc.cl">
+            Enviar correo
+          </a>
+          <Link className="btn btn-ghost" to="/contacto">
+            Ver contacto
+          </Link>
         </div>
       </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
     </>
   )
 }

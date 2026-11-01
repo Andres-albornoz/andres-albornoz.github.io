@@ -1,23 +1,23 @@
-// Root.jsx
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom'
 import Footer from './Footer.jsx'
 import Header from './Header.jsx'
-import Certificado from './Certificado.jsx'
- 
-export function Layout () {
+
+export function Layout() {
   return (
-    <div className="app">
+    <div className="site">
+      <a className="skip-link" href="#main">
+        Saltar al contenido
+      </a>
+
       <Header />
- 
-      <main>
+
+      <main id="main">
         <Outlet />
       </main>
 
-      <Certificado />
- 
       <Footer />
     </div>
-  );
+  )
 }
 
-export default Layout ;
+export default Layout
