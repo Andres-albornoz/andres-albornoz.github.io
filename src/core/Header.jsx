@@ -17,13 +17,14 @@ function Header() {
         <NavLink to="/" end>
           Inicio
         </NavLink>
+        <NavLink to="/portafolio">Portafolio</NavLink>
         <NavLink to="/contacto">Contacto</NavLink>
         <a
           href="https://github.com/Andres-albornoz?tab=repositories"
           target="_blank"
           rel="noreferrer"
         >
-          Portafolio <span aria-hidden="true">↗</span>
+          GitHub <span aria-hidden="true">↗</span>
         </a>
       </nav>
     </header>

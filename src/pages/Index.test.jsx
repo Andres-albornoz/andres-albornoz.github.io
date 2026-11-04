@@ -50,6 +50,9 @@ describe('Página de inicio', () => {
       screen.getByRole('link', { name: 'Enviar correo' }),
     ).toHaveAttribute('href', 'mailto:AN.ALBORNOZC@duocuc.cl')
     expect(
+      screen.getByRole('link', { name: 'Ver portafolio' }),
+    ).toHaveAttribute('href', '/portafolio')
+    expect(
       screen.getByRole('link', { name: 'Ver contacto' }),
     ).toHaveAttribute('href', '/contacto')
     expect(

@@ -23,6 +23,9 @@ describe('Footer', () => {
       'mailto:AN.ALBORNOZC@duocuc.cl',
     )
     expect(
+      within(footer).getByRole('link', { name: 'Portafolio' }),
+    ).toHaveAttribute('href', '/portafolio')
+    expect(
       within(footer).getByRole('link', { name: 'Contacto' }),
     ).toHaveAttribute('href', '/contacto')
 

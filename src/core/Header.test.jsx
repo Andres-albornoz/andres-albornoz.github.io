@@ -1,6 +1,18 @@
 import { screen, within } from '@testing-library/react'
-import { describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { mockFetch, repos } from '../test/mocks.js'
 import { renderAt } from '../test/renderWithRouter.jsx'
+
+beforeEach(() => {
+  vi.stubGlobal(
+    'fetch',
+    mockFetch({ '/users/Andres-albornoz/repos': repos }),
+  )
+})
+
+afterEach(() => {
+  vi.unstubAllGlobals()
+})
 
 describe('Header', () => {
   it('muestra la marca como enlace al inicio', () => {
@@ -26,18 +38,21 @@ describe('Header', () => {
       'href',
       '/',
     )
+    expect(
+      within(nav).getByRole('link', { name: 'Portafolio' }),
+    ).toHaveAttribute('href', '/portafolio')
     expect(within(nav).getByRole('link', { name: 'Contacto' })).toHaveAttribute(
       'href',
       '/contacto',
     )
 
-    const portafolio = within(nav).getByRole('link', { name: /portafolio/i })
-    expect(portafolio).toHaveAttribute(
+    const github = within(nav).getByRole('link', { name: /github/i })
+    expect(github).toHaveAttribute(
       'href',
       'https://github.com/Andres-albornoz?tab=repositories',
     )
-    expect(portafolio).toHaveAttribute('target', '_blank')
-    expect(portafolio).toHaveAttribute('rel', 'noreferrer')
+    expect(github).toHaveAttribute('target', '_blank')
+    expect(github).toHaveAttribute('rel', 'noreferrer')
   })
 
   it('marca la ruta activa con aria-current', () => {
@@ -55,5 +70,18 @@ describe('Header', () => {
     expect(
       within(nav).getByRole('link', { name: 'Inicio' }),
     ).not.toHaveAttribute('aria-current')
+  })
+
+  it('marca Portafolio como activo en su ruta', () => {
+    renderAt('/portafolio')
+
+    const header = screen.getByRole('banner')
+    const nav = within(header).getByRole('navigation', {
+      name: 'Navegación principal',
+    })
+
+    expect(
+      within(nav).getByRole('link', { name: 'Portafolio' }),
+    ).toHaveAttribute('aria-current', 'page')
   })
 })

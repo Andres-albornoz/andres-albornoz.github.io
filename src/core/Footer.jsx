@@ -15,6 +15,7 @@ function Footer() {
         >
           GitHub
         </a>
+        <Link to="/portafolio">Portafolio</Link>
         <Link to="/contacto">Contacto</Link>
       </div>
     </footer>

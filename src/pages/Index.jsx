@@ -35,7 +35,10 @@ function Index() {
             aprendido hasta ahora.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href="#certificados">
+            <Link className="btn btn-primary" to="/portafolio">
+              Ver portafolio
+            </Link>
+            <a className="btn btn-ghost" href="#certificados">
               Ver certificados
             </a>
             <Link className="btn btn-ghost" to="/contacto">
@@ -95,9 +98,6 @@ function Index() {
                 <li key={skill}>{skill}</li>
               ))}
             </ul>
-            <p className="skills-note">
-              Siempre con ganas de sumar una herramienta nueva.
-            </p>
           </div>
         </div>
       </section>
