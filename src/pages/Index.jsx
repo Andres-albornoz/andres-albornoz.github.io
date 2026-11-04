@@ -12,6 +12,7 @@ const skills = [
   'Git',
   'GitHub',
   'c#',
+  'java',
 ]
 
 function Index() {
